@@ -99,14 +99,3 @@ document.querySelectorAll("h1").forEach((h1) => {
 });
 
 
-window.addEventListener('scroll', function() {
-  const splineDiv = document.querySelector('.splineHome');
-  if (window.scrollY > 550) {
-    splineDiv.style.position = 'absolute';
-    splineDiv.style.top = '550px';
-    
-  } else {
-    splineDiv.style.position = 'fixed';
-    splineDiv.style.top = '0';
-  }
-});
