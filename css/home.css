@@ -36,6 +36,7 @@
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 30px 1px #222236ad;
+  transition: height 0.1s, width 0.1s; /* Añadimos la transición para el parpadeo */
 }
 
 #eyeBall {
@@ -48,6 +49,15 @@
   background: black;
   border-radius: 50%;
   transition: 0;
+}
+
+@keyframes blink {
+  0%, 100% { height: 250px; }
+  50% { height: 50px; }
+}
+
+#eye.blink {
+  animation: blink 0.2s ease-in-out;
 }
 
 /* works-header */

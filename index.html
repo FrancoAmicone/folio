@@ -366,15 +366,27 @@
     </footer>
     <script>
 document.onmousemove = (event) => {
-    // Get the mouse cursor's coordinates
+    // Obtener las coordenadas del cursor
     var x = event.clientX * 100 / window.innerWidth + "%";
     var y = event.clientY * 100 / window.innerHeight + "%";
     
-    // Update the element's position based on the mouse coordinates
+    // Actualizar la posición del eyeball según las coordenadas del mouse
     eyeBall.style.transition = "0s";
     eyeBall.style.left = x;
     eyeBall.style.top = y;
-}
+};
+
+document.getElementById('eye').onclick = () => {
+    var eye = document.getElementById('eye');
+    // Añadir la clase que activa el parpadeo
+    eye.classList.add('blink');
+    
+    // Remover la clase después de la animación para permitir parpadeos sucesivos
+    setTimeout(() => {
+        eye.classList.remove('blink');
+    }, 200);
+};
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
