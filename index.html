@@ -40,21 +40,20 @@
         <div class="hero-row">
           <div class="header">
             <h1>fncmicn</h1>
-            <h1 class="sub">design & development</h1>
           </div>
           
         </div>
-        <div class="effectHome">
-         
-
+        <div id="eye">
+          <div id="eyeBall"></div>
         </div>
+            
         <div class="hero-row">
           <p>
             I help businesses, brands, and entrepreneurs create digital products
             and reach their objectives.
           </p>
           <div class="header">
-            <h1>Web & App</h1>
+            <h1>design & develop </h1>
           </div>
         </div>
      
@@ -364,7 +363,16 @@
       </div>
     </footer>
     <script>
-
+document.onmousemove = (event) => {
+    // Get the mouse cursor's coordinates
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+    
+    // Update the element's position based on the mouse coordinates
+    eyeBall.style.transition = "0s";
+    eyeBall.style.left = x;
+    eyeBall.style.top = y;
+}
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
