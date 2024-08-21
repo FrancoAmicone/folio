@@ -62,7 +62,7 @@ span {
 
 h1 {
   font-size: var(--font-large);
-  font:200;
+  font:100;
   mix-blend-mode: difference;
 
 
