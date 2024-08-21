@@ -4,7 +4,7 @@
   --color-accent: #ffffff;
   --color-bg: #000000;
 
-  --font-large: 100px;
+  --font-large: 85px;
   --font-regular: 14px;
   --font-small: 21px;
   --font-tiny: 10px;
@@ -62,7 +62,7 @@ span {
 
 h1 {
   font-size: var(--font-large);
-  font-weight: 400;
+  font:200;
   mix-blend-mode: difference;
 
 
@@ -74,7 +74,7 @@ h1 span {
   display: inline-block;
   transform: translateX(100%);
   font-size: var(--font-large);
-  font-weight: 400;
+  font-weight: 100;
   
 }
 
