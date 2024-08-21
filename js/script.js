@@ -99,4 +99,89 @@ document.querySelectorAll("h1").forEach((h1) => {
 });
 
 
+// Animación de entrada para las clases .jira, .image, .about-hero-img-wrapper
+const animateOnScroll = (selector, animationSettings) => {
+  gsap.from(selector, {
+    ...animationSettings,
+    scrollTrigger: {
+      trigger: selector,
+      start: "top 80%", // Inicia la animación cuando el elemento está al 80% del viewport
+      end: "bottom 20%", // Termina la animación cuando el elemento está al 20% del viewport
+      toggleActions: "play none none reverse", // Controla cómo se ejecuta la animación
+    },
+  });
+};
 
+// Configuraciones de animación para cada clase
+animateOnScroll('.jira', {
+  opacity: 0,
+  x: 300, // Mueve el elemento desde abajo hacia su posición original
+  duration: 1.5,
+  ease: "power4.out",
+});
+
+animateOnScroll('.image', {
+  opacity: 0,
+  x: -200, // Escala el elemento desde un tamaño más pequeño
+  duration: 1.5,
+  ease: "power4.out",
+});
+
+animateOnScroll('.about-hero-img-wrapper', {
+  opacity: 0,
+  x: -100, // Mueve el elemento desde la izquierda hacia su posición original
+  duration: 1.5,
+  ease: "power4.out",
+});
+
+// Animar el elemento con id "eye"
+gsap.from('#eye', {
+  opacity: 0,
+  scale: 0.1, // Escala el ojo desde un tamaño más pequeño
+  duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: '#eye',
+    start: "top 90%", // Inicia cuando el ojo está al 90% del viewport
+    end: "bottom 20%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+// Animar los elementos con la clase "work-item"
+gsap.utils.toArray('.work-item').forEach((item) => {
+  gsap.from(item, {
+    opacity: 0,
+    y: 50, // Mueve el elemento hacia arriba desde una posición más baja
+    duration: 1.5,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: item,
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse"
+    }
+  });
+});
+
+// Animar el contenedor gifImg
+gsap.from('.gifImg', {
+  opacity: 0,
+  x: -200, // Mueve el contenedor desde la izquierda
+  duration: 1.3,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: '.gifImg',
+    start: "top 80%",
+    end: "bottom 20%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+gsap.from('.hero_p',{
+  scale:0,
+  opacity:0,
+  y:100,
+  duration:0.5,
+  ease: "power2.out"
+})

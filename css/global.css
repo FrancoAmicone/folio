@@ -62,7 +62,7 @@ span {
 
 h1 {
   font-size: var(--font-large);
-  font:100;
+  font:200;
   mix-blend-mode: difference;
 
 
@@ -81,7 +81,7 @@ h1 span {
 p,
 a {
   font-size: var(--font-regular);
-  font-weight: 500;
+  font-weight:500;
 }
 
 span {
