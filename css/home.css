@@ -476,6 +476,8 @@ footer.light .btn:hover p {
     width: 80%;    /* Aseguramos que la imagen casi llene el contenedor */
     height: 90%;
   }
+
+
 }
 
 
@@ -579,15 +581,20 @@ footer.light .btn:hover p {
   .awards-header-row:nth-child(3) {
     padding-left: 0em;
   }
+  .aboutVideo{
+    left: 50%;
+  }
 }
 
 
+/* .aboutVideo adjustments */
 .aboutVideo {
-  width: 80%;
-  height:80%;
-  position: absolute;
-  left: 58%;
-  z-index:0;
+  width: 20%; /* Ajusta el ancho al 100% del contenedor */
+  max-width: 20%; /* Asegúrate de que no exceda el ancho del viewport */
+  height: auto; /* Ajusta la altura automáticamente */
+  position: absolute; /* Cambia a relative si no es necesario que sea absolute */
+  left: 80%; /* Centra la posición */
+  z-index: 0;
   mix-blend-mode: screen;
+  overflow-x: hidden; /* Evita el scroll horizontal */
 }
-
