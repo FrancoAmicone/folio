@@ -11,6 +11,26 @@
 .about-hero-header h1 {
   font-size: 200px;
 }
+.image img {
+  width: 30%;
+  height: 30%;
+  margin-bottom: -70vh;
+}
+.image img:hover {
+transform: scale(1.3);
+}
+
+.about-hero-img-wrapper video{
+  width: 250vh;
+}
+
+.jira video {
+  position: absolute;
+  width: 80vh;
+  left: 65%;
+  margin-top: -50vh;
+  mix-blend-mode: screen;
+}
 
 
 .about-hero-header h1:nth-child(2) {
@@ -145,8 +165,19 @@
     top: 0;
   }
 
-video {
+.about-hero-img-wrapper video {
     width: 100%;
+  }
+  .jira video {
+    margin-top: -5vh;
+    left: 50%;
+    width: 50%;
+  }
+
+  .image img {
+    width: 30%;
+    height: 30%;
+    margin-bottom: -20vh;
   }
 
   .about-hero-header h1 {
