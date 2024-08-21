@@ -267,7 +267,9 @@
         <div class="awards-header-row">
           <h1>Making</h1>
           <h1>Art</h1>
+  
         </div>
+    
         <div class="awards-header-row">
           <h1>Websites</h1>
         </div>
@@ -275,12 +277,34 @@
           <h1>Experiences</h1>
         </div>
       </div>
-    </section>
+      <div class="gifImg">
+      
+        <div class="marco_paint">
+          <img src="./assets/marco.png" alt="">
 
-    <section class="awards">
-     
-     
+        </div>
+        <div class="paint">
+          <img src="./assets/img/gif/adam.gif" alt="">
+          <img src="./assets/img/gif/eyes.gif" alt="">
+          <img src="./assets/img/gif/films-black-and-white.gif" alt="">
+          <img src="./assets/img/gif/fing.gif" alt="">
+         <img src="./assets/img/gif/ventiladore.gif" alt="">
+          <img src="./assets/img/gif/Anik.gif" alt="">
+          <img src="./assets/img/gif/train.gif" alt="">
+          <img src="./assets/img/gif/BASQ.gif" alt="">
+          <img src="./assets/img/gif/city.gif" alt="">
+          <img src="./assets/img/gif/KUR.gif" alt="">
+          <img src="./assets/img/gif/cam.gif" alt="">
+          <img src="./assets/img/gif/nohead.gif" alt="">
+    
+        </div>
+    
+      </div>
+
     </section>
+<!--SEX ION VASIA
+    <section class="awards">
+    </section>-->
 
     <section class="contact">
       
@@ -318,7 +342,7 @@
             <div class="socials">
               <a href="">TW</a>
               <a href="https://www.instagram.com/fncmicn.dev/">IG</a>
-              <a href="">GH</a>
+              <a href="https://github.com/FrancoAmicone">GH</a>
               <br />
               <br />
               <br />
@@ -328,15 +352,15 @@
           <div class="footer-col">
             <p>Contact</p>
             <br />
-            <a href="https://www.codegrid.com/">support@fncmicn.com</a>
-            <p>+38 908 982 9823</p>
+            <a href="">support@fncmicn.com</a>
+            <p>+342 4612 0568</p>
             <br />
             <br />
-            <a href="#">Telegram</a>
+            <a href="https://www.instagram.com/fncmicn.dev/">Instagram</a>
             <br />
-            <a href="#">Viber</a>
+            <a href="https://github.com/FrancoAmicone">Github</a>
             <br />
-            <a href="#">Whatsapp</a>
+            <a href="https://www.instagram.com/fncmicn.dev/">Whatsapp</a>
           </div>
           <div class="footer-col">
             <p>Other Pages</p>
@@ -366,6 +390,46 @@
       </div>
     </footer>
     <script>
+      // Seleccionamos todas las imágenes dentro de .paint
+      const gifs = document.querySelectorAll('.paint img');
+      
+      // Índice para controlar la imagen actual
+      let currentGifIndex = 0;
+      
+      // Inicializamos todas las imágenes para que solo la primera esté visible
+      gifs.forEach((gif, index) => {
+        gif.style.position = 'absolute';  // Aseguramos que todas las imágenes estén superpuestas
+        gif.style.left = index === 0 ? '0%' : '100%';  // La primera imagen visible, el resto fuera del contenedor
+      });
+    
+      // Agregamos el evento click a la sección gifImg
+      document.querySelector('.gifImg').addEventListener('click', () => {
+        const currentGif = gifs[currentGifIndex];
+        const nextGifIndex = (currentGifIndex + 1) % gifs.length;
+        const nextGif = gifs[nextGifIndex];
+    
+        // Animamos la imagen actual para que se desplace hacia la izquierda
+        gsap.to(currentGif, {
+          duration: 0.5,
+          left: '-100%',  // Mueve la imagen actual fuera del contenedor hacia la izquierda
+          onComplete: () => {
+            // Después de completar la animación, dejamos la imagen fuera de vista
+            currentGif.style.left = '100%';  
+          }
+        });
+    
+        // Animamos la siguiente imagen para que entre desde la derecha
+        gsap.to(nextGif, {
+          duration: 0.5,
+          left: '0%',  // Mueve la siguiente imagen al centro del contenedor
+          onStart: () => {
+            currentGifIndex = nextGifIndex;  // Actualizamos el índice
+          }
+        });
+      });
+    </script>
+
+    <script>
 document.onmousemove = (event) => {
     // Obtener las coordenadas del cursor
     var x = event.clientX * 100 / window.innerWidth + "%";
@@ -387,6 +451,8 @@ document.getElementById('eye').onclick = () => {
         eye.classList.remove('blink');
     }, 200);
 };
+
+
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

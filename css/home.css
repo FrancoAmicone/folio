@@ -410,6 +410,75 @@ footer.light .btn:hover p {
   justify-content: space-between;
 }
 
+.gifImg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  height: 100vh;
+  left: 40%;
+
+}
+
+.marco_paint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Marco por encima */
+}
+
+.paint {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  z-index: 1; /* Imagen por debajo del marco */
+}
+
+.paint img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .gifImg {
+    width: 90vw;  /* Ajusta el ancho para ocupar más espacio en pantallas pequeñas */
+    height: 50vh;  /* Reducimos la altura */
+    left: 5%;      /* Centramos el contenedor en la pantalla */
+  }
+
+  .paint {
+    top: 10%;      /* Ajustamos el margen superior */
+    left: 10%;     /* Ajustamos el margen izquierdo */
+    width: 80%;    /* Aseguramos que la imagen se ajuste bien al contenedor */
+    height: 80%;   
+  }
+}
+
+/* Media Queries para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .gifImg {
+    width: 100vw;  /* Ancho completo de la pantalla */
+    height: 60vh;  /* Altura reducida para más espacio en pantallas pequeñas */
+    left: 0;       /* Centrado perfecto */
+  }
+
+  .paint {
+    top: 5%;       /* Margen superior ajustado */
+    left: 7%;      /* Margen izquierdo ajustado */
+    width: 80%;    /* Aseguramos que la imagen casi llene el contenedor */
+    height: 90%;
+  }
+}
+
+
 .awards-header-row:nth-child(2) {
   padding-left: 8em;
 }
